@@ -85,7 +85,7 @@ struct TransactionRepositoryTests {
         #expect(transaction2.id == transaction1.id)
         #expect(transaction2.amount == 30000)
         #expect(transaction2.amount == transaction1.amount)
-        
+        // MARK: Check casecade delete rule 
         var categoires = try await categoryRepository.fetchCategory()
         #expect(categoires.count == 1)
         try await categoryRepository.deleteCategory(category)

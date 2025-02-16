@@ -36,7 +36,6 @@ final class PaymentMethodDetailRepositoryImplement: PaymentMethodDetailRepositor
         try await database.delete(paymentMethodDetail)
     }
     
-    
     func updatePaymentMethodDetail() async throws {
         do {
             try await database.saveForUpdate()

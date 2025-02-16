@@ -17,14 +17,14 @@ struct CategoryRepositoryTests {
         self.repository = CategoryRepositoryImplement(database: database)
     }
 
-    @Test func testFetchCategory() async {
+    @Test func testFetch() async {
         
         let categories = try? await repository.fetchCategory()
         #expect(categories != nil)
         #expect(categories?.count == 0)
     }
     
-    @Test func testInsertCategory() async throws {
+    @Test func testInsert() async throws {
         let category1 = Category(name: "Category1")
         let category2 = Category(name: "Category2")
         
@@ -36,7 +36,7 @@ struct CategoryRepositoryTests {
         #expect(categories.count == 2)
     }
     
-    @Test func testDeleteCategory() async throws {
+    @Test func testDelete() async throws {
         let category1 = Category(name: "Category3")
         try await repository.insertCategory(category1)
         var categories = try await repository.fetchCategory()
@@ -46,7 +46,7 @@ struct CategoryRepositoryTests {
         #expect(categories.count == 0)
     }
     
-    @Test func testUpdateCategory() async throws {
+    @Test func testUpdate() async throws {
         let categoryName = "Category4"
         let category1 = Category(name: categoryName)
         try await repository.insertCategory(category1)

@@ -17,13 +17,13 @@ struct PaymentMethodDetailRepositoryTests {
         self.repository = PaymentMethodDetailRepositoryImplement(database: database)
     }
 
-    @Test func testFetchPaymentMethodDetail() async {
+    @Test func testFetch() async {
         let paymentMethodDetails = try? await repository.fetchPaymentMethodDetail()
         #expect(paymentMethodDetails != nil)
         #expect(paymentMethodDetails?.count == 0)
     }
     
-    @Test func testInsertCategory() async throws {
+    @Test func testInsert() async throws {
         let paymentMethodDetail1 = PaymentMethodDetail(type: .creditCard, name: "우리카드")
         let paymentMethodDetail2 = PaymentMethodDetail(type: .bankTransfer, name: "카카오페이")
         try await repository.insertPaymentMethodDetail(paymentMethodDetail1)
@@ -34,7 +34,7 @@ struct PaymentMethodDetailRepositoryTests {
         #expect(paymentMethodDetails.count == 2)
     }
     
-    @Test func testDeleteCategory() async throws {
+    @Test func testDelete() async throws {
         let paymentMethodDetail1 = PaymentMethodDetail(type: .creditCard, name: "우리카드")
         try await repository.insertPaymentMethodDetail(paymentMethodDetail1)
         var paymentMethodDetails = try await repository.fetchPaymentMethodDetail()
@@ -44,7 +44,7 @@ struct PaymentMethodDetailRepositoryTests {
         #expect(paymentMethodDetails.count == 0)
     }
     
-    @Test func testUpdateCategory() async throws {
+    @Test func testUpdate() async throws {
         let cardName = "우리카드"
         let paymentMethodDetail1 = PaymentMethodDetail(type: .creditCard, name: cardName)
         try await repository.insertPaymentMethodDetail(paymentMethodDetail1)

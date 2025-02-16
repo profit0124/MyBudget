@@ -17,13 +17,13 @@ struct SubCategoryRepositoryTests {
         self.repository = SubCategoryRepositoryImplement(database: database)
     }
 
-    @Test func testFetchCategory() async {
+    @Test func testFetch() async {
         let categories = try? await repository.fetchSubCategory()
         #expect(categories != nil)
         #expect(categories?.count == 0)
     }
     
-    @Test func testInsertCategory() async throws {
+    @Test func testInsert() async throws {
         let category = Category(name: "ParentCategory")
         let subCategory1 = SubCategory(name: "SubCategory1", parentCategory: category)
         let subCategory2 = SubCategory(name: "SubCategory2", parentCategory: category)
@@ -36,7 +36,7 @@ struct SubCategoryRepositoryTests {
         #expect(subCategories.count == 2)
     }
     
-    @Test func testDeleteCategory() async throws {
+    @Test func testDelete() async throws {
         let category = Category(name: "ParentCategory")
         let subCategory3 = SubCategory(name: "SubCategory3", parentCategory: category)
         try await repository.insertSubCategory(subCategory3)
@@ -47,7 +47,7 @@ struct SubCategoryRepositoryTests {
         #expect(subCategories.count == 0)
     }
     
-    @Test func testUpdateCategory() async throws {
+    @Test func testUpdate() async throws {
         let category1 = Category(name: "ParentCategory1")
         let category2 = Category(name: "ParentCategory2")
         let subCategory = SubCategory(name: "Sub", parentCategory: category1)
