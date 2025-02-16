@@ -21,9 +21,9 @@ class Transaction {
     var type: TransactionType
     var amount: Double
     var date: Date
-    @Relationship(deleteRule: .cascade) var category: Category
-    @Relationship(deleteRule: .cascade) var subCategory: SubCategory
-    @Relationship(deleteRule: .cascade) var paymentMethod: PaymentMethodDetail
+    var category: Category
+    var subCategory: SubCategory
+    var paymentMethod: PaymentMethodDetail
     var location: String?
     var memo: String?
     
