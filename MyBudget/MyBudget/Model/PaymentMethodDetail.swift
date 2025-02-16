@@ -43,7 +43,7 @@ class PaymentMethodDetail {
     var type: PaymentMethod  // 카드, 현금, 계좌이체 중 하나
     var name: String?        // 카드명 (ex: 국민카드, 신한카드)
     var cashReceipt: Bool?   // 현금영수증 여부 (현금 결제 시)
-    @Relationship(deleteRule: .cascade) var transactions: [Transaction]
+    @Relationship(deleteRule: .cascade, inverse: \Transaction.paymentMethod) var transactions: [Transaction]
     
     /// `PaymentMethodDetail` 객체를 초기화하는 생성자.
     /// - Parameters:

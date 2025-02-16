@@ -21,9 +21,9 @@ class Transaction {
     var type: TransactionType
     var amount: Double
     var date: Date
-    @Relationship(inverse: \Category.transactions) var category: Category
-    @Relationship(inverse: \SubCategory.transactions) var subCategory: SubCategory
-    @Relationship(inverse: \PaymentMethodDetail.transactions) var paymentMethod: PaymentMethodDetail
+    var category: Category
+    var subCategory: SubCategory
+    var paymentMethod: PaymentMethodDetail
     var location: String?
     var memo: String?
     
