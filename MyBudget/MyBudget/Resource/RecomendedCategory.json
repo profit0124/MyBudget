@@ -1,0 +1,174 @@
+[
+  {
+    "transactionType": "수입",
+    "category": [
+      {
+        "name": "근로소득",
+        "subCategory": [
+          { "name": "급여" },
+          { "name": "보너스" },
+          { "name": "아르바이트" }
+        ]
+      },
+      {
+        "name": "투자소득",
+        "subCategory": [
+          { "name": "배당금" },
+          { "name": "자본이득" }
+        ]
+      },
+      {
+        "name": "수동적 소득",
+        "subCategory": [
+          { "name": "임대소득" },
+          { "name": "로열티" }
+        ]
+      },
+      {
+        "name": "기타수입",
+        "subCategory": [
+          { "name": "정부 지원금" },
+          { "name": "세금 환급" },
+          { "name": "선물 수령" }
+        ]
+      }
+    ]
+  },
+  {
+    "transactionType": "고정 지출",
+    "category": [
+      {
+        "name": "주거비",
+        "subCategory": [
+          { "name": "월세" },
+          { "name": "대출" },
+          { "name": "관리비" },
+          { "name": "도시가스" },
+        ]
+      },
+      {
+        "name": "공공요금",
+        "subCategory": [
+          { "name": "전기" },
+          { "name": "수도" },
+          { "name": "가스" },
+          { "name": "인터넷 및 전화" }
+        ]
+      },
+      {
+        "name": "보험료",
+        "subCategory": [
+          { "name": "건강 보험" },
+          { "name": "생명 보험" },
+          { "name": "자동차 보험" }
+        ]
+      },
+      {
+        "name": "정기구독료",
+        "subCategory": [
+          { "name": "OTT" },
+          { "name": "클라우드" },
+          { "name": "회원권" }
+        ]
+      },
+      {
+        "name": "교육 및 보육비",
+        "subCategory": [
+          { "name": "학비" },
+          { "name": "보육비" },
+          { "name": "강좌 및 자격증" }
+        ]
+      },
+      {
+        "name": "통신비",
+        "subCategory": [
+          { "name": "모바일" },
+          { "name": "집전화" },
+          { "name": "인터넷" },
+          { "name": "TV" },
+        ]
+      },
+    ]
+  },
+  {
+    "transactionType": "변동 지출",
+    "category": [
+      {
+        "name": "식비",
+        "subCategory": [
+          { "name": "식료품" },
+          { "name": "외식" },
+          { "name": "음료 및 커피" },
+          { "name": "포장 및 배달" }
+        ]
+      },
+      {
+        "name": "여가",
+        "subCategory": [
+          { "name": "영화" },
+          { "name": "콘서트 및 행사" },
+          { "name": "게임" }
+        ]
+      },
+      {
+        "name": "쇼핑",
+        "subCategory": [
+          { "name": "의류 및 액세서리" },
+          { "name": "전자제품" },
+          { "name": "생활용품" },
+          { "name": "뷰티" }
+        ]
+      },
+      {
+        "name": "여행",
+        "subCategory": [
+          { "name": "항공권" },
+          { "name": "숙박" },
+          { "name": "교통" },
+          { "name": "식비" },
+        ]
+      },
+      {
+        "name": "건강",
+        "subCategory": [
+          { "name": "병원" },
+          { "name": "약" },
+          { "name": "영양제" }
+        ]
+      },
+      {
+        "name": "취미 및 자기계발",
+        "subCategory": [
+          { "name": "도서" },
+          { "name": "강좌" },
+          { "name": "장비" }
+        ]
+      },
+      {
+        "name": "경조사",
+        "subCategory": [
+          { "name": "축의금" },
+          { "name": "부의금" }
+        ]
+      },
+      {
+        "name": "기타 지출",
+        "subCategory": [
+          { "name": "예상치 못한 지출" },
+          { "name": "기부" },
+          { "name": "ATM 인출" },
+          { "name": "기타" }
+        ]
+      },
+      {
+          "name": "교통",
+          "subCategory": [
+            { "name": "대중교통" },
+            { "name": "택시" },
+            { "name": "주유비" },
+            { "name": "주차 요금" },
+          ]
+        }
+    ]
+  }
+]
