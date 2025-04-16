@@ -17,7 +17,14 @@ enum DatabaseError: Error {
 actor Database {
     init(isStoredInMemoryOnly: Bool = false) {
         do {
-            let scheme = Schema([Category.self])
+            let scheme = Schema([
+                Category.self,
+                SubCategory.self,
+                Transaction.self,
+                PaymentMethodDetail.self,
+                Budget.self,
+                CategoryBudget.self
+            ])
             let configuration = ModelConfiguration(schema: scheme, isStoredInMemoryOnly: isStoredInMemoryOnly, allowsSave: true)
             let container = try ModelContainer(for: scheme, configurations: configuration)
             let context = ModelContext(container)

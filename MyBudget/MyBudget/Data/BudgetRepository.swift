@@ -9,10 +9,10 @@ import Foundation
 import SwiftData
 
 protocol BudgetRepository {
-    func fetchCategory() async throws -> [Budget]
-    func insertCategory(_ category: Budget) async throws
-    func deleteCategory(_ category: Budget) async throws
-    func updateCategory() async throws
+    func fetchBudget() async throws -> [Budget]
+    func insertBudget(_ category: Budget) async throws
+    func deleteBudget(_ category: Budget) async throws
+    func updateBudget() async throws
 }
 
 final class BudgetRepositoryImplement: BudgetRepository {
@@ -23,20 +23,20 @@ final class BudgetRepositoryImplement: BudgetRepository {
         self.database = database
     }
     
-    func fetchCategory() async throws -> [Budget] {
+    func fetchBudget() async throws -> [Budget] {
         let descriptor = FetchDescriptor<Budget>()
         return try await database.fetch(descriptor)
     }
     
-    func insertCategory(_ category: Budget) async throws {
+    func insertBudget(_ category: Budget) async throws {
         try await database.insert(category)
     }
     
-    func deleteCategory(_ category: Budget) async throws {
+    func deleteBudget(_ category: Budget) async throws {
         try await database.delete(category)
     }
     
-    func updateCategory() async throws {
+    func updateBudget() async throws {
         do {
             try await database.saveForUpdate()
         } catch {
