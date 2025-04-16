@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class Budget {
+final class Budget: Sendable {
     @Attribute(.unique) var id: UUID = UUID()
     var month: Date
     var totalLimit: Double?

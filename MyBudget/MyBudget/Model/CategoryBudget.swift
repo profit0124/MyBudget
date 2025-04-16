@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class CategoryBudget {
+final class CategoryBudget: Sendable {
     @Attribute(.unique) var id: UUID = UUID()
     var categoryName: String
     var limit: Double
