@@ -24,7 +24,7 @@ struct SubCategoryRepositoryTests {
     }
     
     @Test func testInsert() async throws {
-        let category = Category(name: "ParentCategory")
+        let category = Category(name: "ParentCategory", transactionType: .fixedExpance)
         let subCategory1 = SubCategory(name: "SubCategory1", parentCategory: category)
         let subCategory2 = SubCategory(name: "SubCategory2", parentCategory: category)
         
@@ -37,7 +37,7 @@ struct SubCategoryRepositoryTests {
     }
     
     @Test func testDelete() async throws {
-        let category = Category(name: "ParentCategory")
+        let category = Category(name: "ParentCategory", transactionType: .fixedExpance)
         let subCategory3 = SubCategory(name: "SubCategory3", parentCategory: category)
         try await repository.insertSubCategory(subCategory3)
         var subCategories = try await repository.fetchSubCategory()
@@ -48,8 +48,8 @@ struct SubCategoryRepositoryTests {
     }
     
     @Test func testUpdate() async throws {
-        let category1 = Category(name: "ParentCategory1")
-        let category2 = Category(name: "ParentCategory2")
+        let category1 = Category(name: "ParentCategory1", transactionType: .fixedExpance)
+        let category2 = Category(name: "ParentCategory2", transactionType: .fixedExpance)
         let subCategory = SubCategory(name: "Sub", parentCategory: category1)
         try await repository.insertSubCategory(subCategory)
         let category = try await repository.fetchSubCategory().first!
