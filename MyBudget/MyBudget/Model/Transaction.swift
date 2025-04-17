@@ -21,8 +21,8 @@ class Transaction {
     var type: TransactionType
     var amount: Double
     var date: Date
-    var category: Category
-    var subCategory: SubCategory
+    var category: Category?
+    var subCategory: SubCategory?
     var paymentMethod: PaymentMethodDetail
     var location: String?
     var memo: String?

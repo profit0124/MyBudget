@@ -24,7 +24,7 @@ import SwiftData
 class SubCategory {
     @Attribute(.unique) var id: UUID = UUID()
     var name: String
-    var parentCategory: Category
+    var parentCategory: Category?
     @Relationship(deleteRule: .cascade, inverse: \Transaction.subCategory) var transactions: [Transaction]
 
     init(name: String,
