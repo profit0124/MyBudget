@@ -28,7 +28,7 @@ struct TransactionRepositoryTests {
     }
     
     @Test func testInsert() async throws {
-        let category = Category(name: "ParentCategory")
+        let category = Category(name: "ParentCategory", transactionType: .fixedExpance)
         let subCategory = SubCategory(name: "SubCategory", parentCategory: category)
         let paymentMethodDetail = PaymentMethodDetail(type: .creditCard, name: "우리카드")
         let transaction = Transaction(
@@ -45,7 +45,7 @@ struct TransactionRepositoryTests {
     }
     
     @Test func testDelete() async throws {
-        let category = Category(name: "ParentCategory")
+        let category = Category(name: "ParentCategory", transactionType: .fixedExpance)
         let subCategory = SubCategory(name: "SubCategory", parentCategory: category)
         let paymentMethodDetail = PaymentMethodDetail(type: .creditCard, name: "우리카드")
         let transaction = Transaction(
@@ -65,7 +65,7 @@ struct TransactionRepositoryTests {
     }
     
     @Test func testUpdate() async throws {
-        let category = Category(name: "ParentCategory")
+        let category = Category(name: "ParentCategory", transactionType: .fixedExpance)
         let subCategory = SubCategory(name: "SubCategory", parentCategory: category)
         let paymentMethodDetail = PaymentMethodDetail(type: .creditCard, name: "우리카드")
         let transaction = Transaction(

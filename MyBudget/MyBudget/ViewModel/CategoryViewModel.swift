@@ -49,7 +49,7 @@ final class CategoryViewModel {
     }
     
     private func insert() async throws {
-        let category = Category(name: newCategoryName)
+        let category = Category(name: newCategoryName, transactionType: .fixedExpance)
         try await repository.insertCategory(category)
         newCategoryName = ""
         try await fetch()

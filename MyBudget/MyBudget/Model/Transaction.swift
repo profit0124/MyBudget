@@ -21,8 +21,8 @@ class Transaction {
     var type: TransactionType
     var amount: Double
     var date: Date
-    var category: Category
-    var subCategory: SubCategory
+    var category: Category?
+    var subCategory: SubCategory?
     var paymentMethod: PaymentMethodDetail
     var location: String?
     var memo: String?
@@ -61,4 +61,13 @@ enum TransactionType: Int, Codable {
     case income
     case fixedExpance
     case varibleExpance
+    
+    static func fromKoreanName(_ name: String) -> TransactionType? {
+        switch name {
+        case "수입": return .income
+        case "고정 지출": return .fixedExpance
+        case "변동 지출": return .varibleExpance
+        default: return nil
+        }
+    }
 }
